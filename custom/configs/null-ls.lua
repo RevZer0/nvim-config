@@ -3,6 +3,9 @@ local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
 local opts = {
   sources = {
+    null_ls.builtins.formatting.gofumpt, -- go install mvdan.cc/gofumpt@latest
+    null_ls.builtins.formatting.goimports_reviser, -- go install github.com/incu6us/goimports-reviser/v3@latest
+    null_ls.builtins.formatting.golines, -- go install github.com/segmentio/golines@latest
     null_ls.builtins.formatting.prettierd,
   },
   on_attach = function (client, bufnr)
